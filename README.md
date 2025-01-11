@@ -7,7 +7,8 @@ GoogleSheetsClone/
 ├── styles.css
 └── script.js
 Step 1: Create index.html
-<!DOCTYPE html>
+
+//<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +31,8 @@ Step 1: Create index.html
 
 
 Step 2: Create styles.css
-body {
+
+// body {
     font-family: Arial, sans-serif;
 }
 
@@ -56,7 +58,8 @@ td, th {
 }
 
 Step 3: Create script.js
-document.addEventListener('DOMContentLoaded', () => {
+ 
+ //document.addEventListener('DOMContentLoaded', () => {
     const sheet = document.getElementById('sheet');
     const rows = 20; // Number of rows
     const cols = 10; // Number of columns
