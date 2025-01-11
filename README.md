@@ -142,3 +142,31 @@ Running Your Project
 Open your project folder in a code editor (e.g., Visual Studio Code).
 
 Open index.html in your web browser to see your Google Sheets clone in action.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sheet = document.getElementById('sheet');
+    const rows = 20; // Number of rows
+    const cols = 10; // Number of columns
+
+    // Create table rows and cells
+    for (let i = 0; i < rows; i++) {
+        const row = document.createElement('tr');
+        for (let j = 0; j < cols; j++) {
+            const cell = document.createElement('td');
+            cell.contentEditable = true;
+            cell.addEventListener('blur', () => validateCell(cell));
+            row.appendChild(cell);
+        }
+        sheet.appendChild(row);
+    }
+});
+
+function validateCell(cell) {
+    const value = cell.textContent;
+    if (!isNaN(value)) {
+        cell.style.backgroundColor = ''; // Valid numeric cell
+    } else {
+        cell.style.backgroundColor = 'red'; // Invalid numeric cell
+    }
+}
+
