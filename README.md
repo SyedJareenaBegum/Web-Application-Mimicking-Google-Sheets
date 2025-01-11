@@ -1,14 +1,10 @@
-# Web-Application-Mimicking-Google-Sheets
-Project Structure
-plaintext
-GoogleSheetsClone/
-│
-├── index.html
-├── styles.css
-└── script.js
-Step 1: Create index.html
+1. Spreadsheet Interface
+Let's start by creating the basic structure of the spreadsheet interface using HTML, CSS, and JavaScript.
 
-//<!DOCTYPE html>
+HTML:
+
+html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +14,7 @@ Step 1: Create index.html
 </head>
 <body>
     <div id="toolbar">
-        <!-- Toolbar items will go here -->
+        <!-- Toolbar items -->
     </div>
     <div id="spreadsheet">
         <table id="sheet">
@@ -28,11 +24,10 @@ Step 1: Create index.html
     <script src="script.js"></script>
 </body>
 </html>
+CSS (styles.css):
 
-
-Step 2: Create styles.css
-
-// body {
+css
+body {
     font-family: Arial, sans-serif;
 }
 
@@ -56,39 +51,30 @@ td, th {
     padding: 8px;
     text-align: left;
 }
+JavaScript (script.js):
 
-Step 3: Create script.js
- 
- //document.addEventListener('DOMContentLoaded', () => {
+javascript
+document.addEventListener('DOMContentLoaded', () => {
     const sheet = document.getElementById('sheet');
     const rows = 20; // Number of rows
     const cols = 10; // Number of columns
-    Create table rows and cells
+
+    // Create table rows and cells
     for (let i = 0; i < rows; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < cols; j++) {
             const cell = document.createElement('td');
             cell.contentEditable = true;
-            cell.addEventListener('blur', () => validateCell(cell));
             row.appendChild(cell);
         }
         sheet.appendChild(row);
     }
 });
+2. Implementing Functions
+You can add JavaScript functions to handle the mathematical and data quality functions.
 
-function validateCell(cell) {
-    const value = cell.textContent;
-    if (!isNaN(value)) {
-        cell.style.backgroundColor = ''; // Valid numeric cell
-    } else {
-        cell.style.backgroundColor = 'red'; // Invalid numeric cell
-    }
-}
+JavaScript Functions (script.js):
 
-
-
-Step 4: Implement Mathematical Functions
-Add these functions in script.js:
 javascript
 function sum(range) {
     let total = 0;
@@ -117,11 +103,6 @@ function count(range) {
     return range.filter(cell => !isNaN(parseFloat(cell.textContent))).length;
 }
 
-
-
-Step 5: Implement Data Quality Functions
-Add these functions in script.js:
-javascript
 function trim(cell) {
     cell.textContent = cell.textContent.trim();
 }
@@ -147,13 +128,5 @@ function findAndReplace(range, findText, replaceText) {
         cell.textContent = cell.textContent.replace(new RegExp(findText, 'g'), replaceText);
     }
 }
-
-Step 6: Add Event Listeners for Interactivity
-Update script.js to include event listeners for data entry, validation, and user interactions.
-
-Running Your Project
-Open your project folder in a code editor (e.g., Visual Studio Code).
-
-Open index.html in your web browser to see your Google Sheets clone in action.
-
-
+3. Adding Interactivity
+To add interactivity, you can create event listeners and functions to handle user actions like data entry, validation, and formatting.
