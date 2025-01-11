@@ -1,0 +1,19 @@
+body { 
+    font-family: Arial, sans-serif; 
+} 
+#toolbar{ 
+    padding: 10px;
+  background: #f1f1f1; 
+  border-bottom: 1px solid #ccc;
+   } 
+   #spreadsheet { 
+    margin: 20px; 
+   } 
+   table { 
+    border-collapse: collapse; width: 100%; 
+    } 
+    td, th { 
+        border:1px solid #ccc; 
+        padding: 8px; 
+        text-align: left; 
+ }
