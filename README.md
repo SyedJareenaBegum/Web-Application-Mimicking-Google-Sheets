@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sheet = document.getElementById('sheet');
     const rows = 20; // Number of rows
     const cols = 10; // Number of columns
-
-    // Create table rows and cells
+    Create table rows and cells
     for (let i = 0; i < rows; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < cols; j++) {
