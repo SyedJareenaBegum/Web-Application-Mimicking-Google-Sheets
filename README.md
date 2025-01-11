@@ -33,22 +33,18 @@ css
 body {
     font-family: Arial, sans-serif;
 }
-
 #toolbar {
     padding: 10px;
     background: #f1f1f1;
     border-bottom: 1px solid #ccc;
 }
-
 #spreadsheet {
     margin: 20px;
 }
-
 table {
     border-collapse: collapse;
     width: 100%;
 }
-
 td, th {
     border: 1px solid #ccc;
     padding: 8px;
@@ -58,10 +54,9 @@ Step 3: Create script.js
 javascript
 document.addEventListener('DOMContentLoaded', () => {
     const sheet = document.getElementById('sheet');
-    const rows = 20; // Number of rows
-    const cols = 10; // Number of columns
-
-    // Create table rows and cells
+    const rows = 20; 
+    const cols = 10; 
+   Create table rows and cells
     for (let i = 0; i < rows; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < cols; j++) {
@@ -73,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sheet.appendChild(row);
     }
 });
-
 function validateCell(cell) {
     const value = cell.textContent;
     if (!isNaN(value)) {
@@ -84,7 +78,6 @@ function validateCell(cell) {
 }
 Step 4: Implement Mathematical Functions
 Add these functions in script.js:
-
 javascript
 function sum(range) {
     let total = 0;
@@ -93,41 +86,33 @@ function sum(range) {
     }
     return total;
 }
-
 function average(range) {
     let total = sum(range);
     return total / range.length;
 }
-
 function max(range) {
     let values = range.map(cell => parseFloat(cell.textContent) || 0);
     return Math.max(...values);
 }
-
 function min(range) {
     let values = range.map(cell => parseFloat(cell.textContent) || 0);
     return Math.min(...values);
 }
-
 function count(range) {
     return range.filter(cell => !isNaN(parseFloat(cell.textContent))).length;
 }
 Step 5: Implement Data Quality Functions
 Add these functions in script.js:
-
 javascript
 function trim(cell) {
     cell.textContent = cell.textContent.trim();
 }
-
 function upper(cell) {
     cell.textContent = cell.textContent.toUpperCase();
 }
-
 function lower(cell) {
     cell.textContent = cell.textContent.toLowerCase();
 }
-
 function removeDuplicates(range) {
     let uniqueValues = new Set();
     for (let cell of range) {
@@ -141,6 +126,7 @@ function findAndReplace(range, findText, replaceText) {
         cell.textContent = cell.textContent.replace(new RegExp(findText, 'g'), replaceText);
     }
 }
+
 Step 6: Add Event Listeners for Interactivity
 Update script.js to include event listeners for data entry, validation, and user interactions.
 
