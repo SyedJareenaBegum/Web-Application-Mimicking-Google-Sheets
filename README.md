@@ -105,13 +105,15 @@ body {
         text-align: left; 
  }
 
+
+
  Java Script
 document.addEventListener('DOMContentLoaded', () => { 
     const sheet = document.getElementById('sheet');
     const rows = 20; 
     const cols = 10; 
       
-  Create table rows and cells 
+  // Create table rows and cells 
      for (let i = 0; i < rows; i++) { 
         const row = document.createElement('tr'); 
         for (let j = 0; j < cols; j++) 
@@ -128,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
              const value = cell.textContent; 
              if (!isNaN(value)) { 
                 cell.style.backgroundColor = ''; 
-               Valid numeric cell
+              // Valid numeric cell
                  } else { 
                     cell.style.backgroundColor = 'red';
-                     Invalid numeric cell
+                     // Invalid numeric cell
                       } 
                     }
 
