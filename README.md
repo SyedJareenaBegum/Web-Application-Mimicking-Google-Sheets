@@ -81,6 +81,8 @@ td, th {
     padding: 8px;
     text-align: left;
 }
+
+
 Step 3: Create script.js
 javascript
 document.addEventListener('DOMContentLoaded', () => {
@@ -109,6 +111,8 @@ function validateCell(cell) {
         cell.style.backgroundColor = 'red'; // Invalid numeric cell
     }
 }
+
+
 Step 4: Implement Mathematical Functions
 Add these functions in script.js:
 javascript
@@ -138,6 +142,8 @@ function min(range) {
 function count(range) {
     return range.filter(cell => !isNaN(parseFloat(cell.textContent))).length;
 }
+
+
 Step 5: Implement Data Quality Functions
 Add these functions in script.js:
 javascript
@@ -166,6 +172,8 @@ function findAndReplace(range, findText, replaceText) {
         cell.textContent = cell.textContent.replace(new RegExp(findText, 'g'), replaceText);
     }
 }
+
+
 Step 6: Add Event Listeners for Interactivity
 Update script.js to include event listeners for data entry, validation, and user interactions.
 Running Your Project
