@@ -45,11 +45,15 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+    
 td, th {
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 8px; 
     text-align: left;
+    }
 }
+
+
 Step 3: Create script.js
 javascript
 document.addEventListener('DOMContentLoaded', () => {
